@@ -2,28 +2,21 @@
 	<div class="subject">
 		<ReturnHead :text="subjectData.title"></ReturnHead>
 		<div class="subject_content">
-			<h1 class="subject_content_title">
-				{{ subjectData.title }}
-				<p>
-					<span>
-						<i></i>
-						<i></i>
-						<i></i>
-						<i></i>
-						<i></i>
-					</span>
-					<strong>6.0</strong>
-					<span>39406人评价</span>
-				</p>
-			</h1>
 			<div class="subject_content_info">
 				<div class="left">
-					<p>{{ subjectData.genres[0] }} / {{ subjectData.genres[1] }} / {{ subjectData.genres[2] }}</p>
-					<p>{{ subjectData.countries[0] }}（{{ subjectData.year }}）</p>
-				</div>
-				<div class="right">
 					<img :src="subjectData.images.large" alt="">
 				</div>
+				<div class="right">
+					<h1 class="subject_content_title">
+						{{ subjectData.title }}
+					</h1>
+					<p>{{ subjectData.genres[0] }} / {{ subjectData.genres[1] }}</p>
+					<p>{{ subjectData.countries[0] }}（{{ subjectData.year }}）</p>
+				</div>
+			</div>
+			<div class="subject_content_intro">
+				<h2>{{ subjectData.title }}的剧情介绍</h2>
+				<p>{{ subjectData.summary }}</p>
 			</div>
 		</div>
 	</div>
@@ -82,8 +75,11 @@
 	.left {
 		-webkit-box-flex: 1;
 	}
-	.right img {
+	.left img {
 		width: 2rem;
-		height: 3rem;
+		height: 2.4rem;
+	}
+	.right {
+		-webkit-box-flex: 8;
 	}
 </style>
